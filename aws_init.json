@@ -1,8 +1,12 @@
 {
+  "variables": {
+    "aws_access_key": "{{env `MY_ACCESS_KEY`}}",
+    "aws_secret_key": "{{env `MY_SECRET_KEY`}}"
+  },
   "builders": [{
     "type": "amazon-ebs",
-    "access_key": "{{env `aws_access_key`}}",
-    "secret_key": "{{env `aws_secret_key`}}",
+    "access_key": "{{user `aws_access_key`}}",
+    "secret_key": "{{user `aws_secret_key`}}",
     "region": "us-east-1",
     "subnet_id": "subnet-335ef77b",
     "source_ami_filter": {
